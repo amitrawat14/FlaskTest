@@ -1,0 +1,47 @@
+<html>
+<head>
+
+<body>
+<p>Hi this is Data page, my name is {{name}} and job is {{job}}</p>
+<style type="text/css"> 
+      
+    th:tr{ 
+        color: blue; 
+  
+    } 
+    tr:nth-of-type(2n){ 
+        border: 1px solid black; 
+        background-color: rgba(150, 150, 150, 0.5); 
+  
+    } 
+  
+    td{ 
+        padding: 8px 8px; 
+        border: 1px solid black; 
+    } 
+</style> 
+
+<table style="margin-left: 20px;"> 
+<!-- Table headers -->
+    <th> 
+        <tr style="color: green; ">     
+        <td>Subnet CIDR</td> 
+        <td>Region Name</td> 
+        <td>Availability Zone</td>
+</tr> 
+    </th> 
+    {% for item in subnets %}
+    <tr>
+       <td> {{item[0]}}</td>
+       <td> {{item[1]}}</td>
+       <td> {{item[2]}}</td>
+       
+    </tr>
+    {% endfor %}
+
+
+</table>
+
+</body>
+</head>
+</html>
